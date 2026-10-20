@@ -5,18 +5,10 @@ from colorama import Fore
 fs = {
   '/mnt' : {
     '/mnt/root' : {
-      "secret" : "этот код бессмысленный"
-      "ascii" : """
-  █████████           █████       ██████████
- ███░░░░░███         ░░███       ░███░░░░░░█
-░███    ░░░   ██████  ░███       ░███     ░
-░░█████████  ███░░███ ░███       ░█████████
- ░░░░░░░░███░███████  ░███       ░░░░░░░░███
- ███    ░███░███░░░   ░███      █ ███   ░███
-░░█████████ ░░██████  ███████████░░████████
- ░░░░░░░░░   ░░░░░░  ░░░░░░░░░░░  ░░░░░░░░
-
-the free kernel made by a joke          """
+      "secret" : "этот код бессмысленный"    
+    }
+    '/mnt/boot' : {
+      'bios' : {}
     }
   }
 }
@@ -33,6 +25,15 @@ ascii = """
       
 the free kernel made by a joke          """
 
+def bios_boot():
+  components = ["cpu, ram"]
+  print("[  01]  booting")
+  time.sleep(0.5)
+  for comp in components:
+    print(f"{comp:.<30}", end="", flush=True)
+    time.sleep(0.2)
+  os.system("clear")
+bios_boot()
 def command():
   cmd = input("root@sel5-> ")
   if cmd == "listf":
@@ -74,4 +75,3 @@ term:/dev/tty
 """)
 while True:
   command()
-
