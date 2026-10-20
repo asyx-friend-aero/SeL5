@@ -33,6 +33,7 @@ def bios_boot():
     print(f"{comp:.<30}", end="", flush=True)
     time.sleep(0.2)
   os.system("clear")
+  print(ascii)
 bios_boot()
 def command():
   cmd = input("root@sel5-> ")
